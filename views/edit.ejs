@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+  <title>Editar Libro</title>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Actualizar</h2>
+			<a href="/" class="btn btn-default">Inicio</a>
+			<br><br>
+			<form method="post" action="/actualizar" enctype="multipart/form-data">
+			  <div class="form-group">
+				<label for="titulo">Titulo</label>
+				<input type="text" name="libro[titulo]" value="<%= libro.titulo %>" class="form-control" id="titulo" placeholder="titulo">
+			  </div>
+
+			  <div class="form-group">
+				<label for="resumen">resumen</label>
+				<input type="text" name="libro[resumen]" value="<%= libro.resumen %>" class="form-control" id="resumen" placeholder="resumen">
+			  </div>
+
+			  <div class="form-group">
+				<label for="biografia">Fecha</label>
+				<input type="text" name="libro[fecha]" class="form-control" value="<%= libro.fecha %>" id="fecha" placeholder="fecha">
+			  </div>
+			<input type="hidden" name="libro[id]" value="<%= libro.id %>">
+			<div class="form-group">
+				<img  width="200" height="200" src="/uploads/<%= libro.imagen %>">
+				<label for="img">Imagen</label>
+				<input id="img"  name="imagen" type="file">
+			</div>
+			  <button type="submit" class="btn btn-primary">Guardar</button>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
